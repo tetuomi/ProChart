@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+     var ncmb = new NCMB("f390f3e88f724de944b3366f0e4d49f1ede7640cf0854765c277f58f5a0f0e12","1fd4e03f5ad0f688c510b4d8e5c1c1f6fe70e69b852729d33bd215e99aeb7990");
+    </script>
+    <script src="JavaScript/app.js"></script>
+  </head>
+  <body>
+    <center>
+      <h1>Log in</h1>
+      <span>名前</span><center><input type="text" id="name"><br></center>
+      <span>パスワード</span><center><input type="password" id="password"><br></center>
+      <input type="button" onclick="us.check();" value="完了"><br><br>
+      <p id="badman"><p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <a onclick="appear();">新規登録</a><br>
+      <div id ="record" style="display:none;">
+        <span>名前</span><center><input type="text" id="Newname"><br></center>
+        <span>パスワード</span><center><input type="password" id="Newpassword"><br><br></center>
+        <input type="button" onclick="us.save();" value="完了"><br>
+      </div>
+    </center>
+    <script type="text/javascript">
+     var us = new UserDB();
+    </script>
+  </body>
+</html>
+
