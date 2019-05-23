@@ -15,6 +15,7 @@ UserDB.prototype = {
             .then(function(results){
                 // 保存に成功した場合の処理
                 console.log("success restore")
+                document.location.href = "record.html";
             })
             .catch(function(err){
                 // 保存に失敗した場合の処理
@@ -27,22 +28,24 @@ UserDB.prototype = {
         var obj;
         var name = document.getElementById("name").value;
         var password = document.getElementById("password").value;
+        var missmatch = true;
         // データの取得(降順)
         User.order("createDate",true)
+            .equalTo("name",name) // 同じ名前を引っ張る
             .fetchAll()
             .then(function(results){
-                alert("success get");
-                obj = results[0];
-                if(name == obj.get("name") && password == obj.get("password")) document.location.href = "firstpage.html";
-                else document.getElementById("badman").innerHTML = "ダメだニャん";
+                console.log("success get");
+                for(i = 0;i < results.length;i++){
+                    obj = results[i];
+                    if(password == obj.get("password")){
+                        document.location.href = "record.html";
+                        missmatch = false;
+                    }
+                }
+                if(missmatch) document.getElementById("badman").innerHTML = "ダメだニャん";
             })
             .catch(function(err){
-                alert("err");
+                console.log("err");
             });
     }
 };
-
-function appear(){
-    var div=document.getElementById("record");
-    div.setAttribute("style","display:inline");
-}
