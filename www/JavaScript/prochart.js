@@ -11,7 +11,7 @@ function appear(){
     div.setAttribute("style","display:inline");
 };
 
-function createInput(TARGET, POSITION){
+function genTextBox(TARGET, POSITION){
     var target = document.getElementById(TARGET);
     var textBox = document.createElement('input');
     var resisterBox = document.createElement('input');
@@ -22,7 +22,7 @@ function createInput(TARGET, POSITION){
     resisterBox.id = "newLangName";
     resisterBox.value = "完了";
     resisterBox.onclick = function() {
-        lang.save();
+        ln.save();
     };
     
     target.insertAdjacentElement(POSITION, resisterBox);

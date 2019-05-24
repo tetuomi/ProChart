@@ -1,4 +1,4 @@
-function LangDB(){    
+function LangDB(){
 };
 
 LangDB.prototype = {
@@ -8,7 +8,6 @@ LangDB.prototype = {
         // 保存先クラスのインスタンスを生成
         var lang = new Lang();
         var langName = document.getElementById("NewLangName").value;
-       // var password = document.getElementById("Newpassword").value;
         
         lang.set("name",langName)
             .save()
@@ -24,20 +23,20 @@ LangDB.prototype = {
     
     show: function() {
         var Lang = ncmb.DataStore("Lang");
-        var obj;
-        var name = document.getElementById("name").value;
-        var password = document.getElementById("password").value;
+        var obj = [];
+        var target = document.getElementById("defaultOption")
         // データの取得(降順)
         Lang.order("createDate",true)
             .fetchAll()
             .then(function(results){
                 console.log("success get langs");
                 for(i = 0; i < results.length; i++){
-                    obj = results[i];
-                    
-
+                    obj[i] = results[i];
+                    var option = document.createElement('option');
+                    option.label = obj[i].get('name');
+                    target.insertAdjacentElement("afterend", option);
                 }
-              
+                
             })
             .catch(function(err){
                 alert("err");
