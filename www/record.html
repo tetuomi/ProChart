@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-     var ncmb = new NCMB("f390f3e88f724de944b3366f0e4d49f1ede7640cf0854765c277f58f5a0f0e12","1fd4e03f5ad0f688c510b4d8e5c1c1f6fe70e69b852729d33bd215e99aeb7990");
+      var ncmb = new NCMB("f390f3e88f724de944b3366f0e4d49f1ede7640cf0854765c277f58f5a0f0e12","1fd4e03f5ad0f688c510b4d8e5c1c1f6fe70e69b852729d33bd215e99aeb7990");
     </script>
     <script src="JavaScript/prochart.js"></script>
+    <script src="JavaScript/LangDB.js"></script>
   </head>
   <body>
-    <form action="" method="post">
-      <label for="select">言語を選択</label>
-      <select id="language">
-        <option value="" selected>--選択して下さい--</option>
-        <option value="C">C</option>
-        <option value="C++">C++</option>
-        <option value="Python">Python</option>
-      </select>
-      <input type="button" value="選択" onclick=""> <!-- id="language"のvalueで選択を取得 -->
-    </form>
+    <label for="select">言語を選択</label>
+    <select id="language" onchange="createInput('language','afterend')">
+      <option value="" selected>--選択して下さい--</option>
+      <option  >新言語を登録</option>
+    </select>
+    
+    <br>
     <a href="index.html">戻る</a>
+    <script type="text/javascript">
+      var lang = new LangDB();
+    </script>
   </body>
 </html>
