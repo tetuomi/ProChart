@@ -22,6 +22,7 @@ LangDB.prototype = {
     },
     
     show: function() {
+        var optionValue = document.getElementById('language').value;
         var Lang = ncmb.DataStore("Lang");
         var obj = [];
         var target = document.getElementById("defaultOption")
@@ -41,6 +42,14 @@ LangDB.prototype = {
             .catch(function(err){
                 alert("err");
             });
+    },
+    judge: function(){
+        var optionValue = document.getElementById("language").value;
+
+        if(optionValue == "other"){
+            genTextBox('language', 'afterend');
+        }
+
     }
 };
 

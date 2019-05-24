@@ -15,9 +15,9 @@
   </head>
   <body>
     <label for="select">言語を選択</label>
-    <select id="language" onmouseover="ln.show()" onchange="genTextBox('language','afterend')">
-      <option id="defaultOption"  value="" selected>--選択して下さい--</option>
-      <option >新言語を登録</option>
+    <select id="language" onchange="ln.judge()" onmousedown="ln.show()">
+      <option id="defaultOption" value="" selected>--選択して下さい--</option>
+      <option value="other">新言語を登録</option>
     </select>
     
     <br>
