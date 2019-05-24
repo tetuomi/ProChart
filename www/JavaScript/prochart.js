@@ -29,3 +29,17 @@ function genTextBox(TARGET, POSITION){
     
     console.log("create form");
 };
+
+function getId(targetId){
+    return window.document.getElementById(targetId);
+};
+
+
+       
+
+
+
+
+
+
+
