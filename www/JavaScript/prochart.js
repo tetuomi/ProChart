@@ -15,11 +15,15 @@ function createInput(TARGET, POSITION){
     var target = document.getElementById(TARGET);
     var textBox = document.createElement('input');
     var resisterBox = document.createElement('input');
-  
+    
     textBox.type = "text";
+    textBox.id = "NewLangName"
     resisterBox.type = "button";
-    resisterBox.id = "resisterBox";
+    resisterBox.id = "newLangName";
     resisterBox.value = "完了";
+    resisterBox.onclick = function() {
+        lang.save();
+    };
     
     target.insertAdjacentElement(POSITION, resisterBox);
     target.insertAdjacentElement(POSITION, textBox);
